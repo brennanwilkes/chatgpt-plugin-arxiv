@@ -1,0 +1,19 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Research Paper Search",
+    "name_for_model": "Research Paper Search",
+    "description_for_human": "Query arxiv.org for relevant research papers.",
+    "description_for_model": "Query arxiv.org for relevant research papers. Allows search for abstracts only or full papers.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "PLUGIN_HOSTNAME/static/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "PLUGIN_HOSTNAME/static/logo.png",
+    "contact_email": "brennan@codexwilkes.com",
+    "legal_info_url": "https://bw.codexwilkes.com/"
+  }
+  

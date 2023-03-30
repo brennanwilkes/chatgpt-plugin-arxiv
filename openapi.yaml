@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: Research Paper Plugin
+  description: Query for research papers, get abstracts, and retrieve full paper text.
+  version: 'v1'
+servers:
+  - url: PLUGIN_HOSTNAME
+paths:
+  /search:
+    get:
+      operationId: searchPapers
+      summary: Search for research papers based on a simple text query.
+      parameters:
+      - in: query
+        name: text
+        schema:
+          type: string
+        description: Text query for searching research papers. Should be a short collection of words, closely related to the desired papers. 
+      responses:
+        "200":
+          description: OK
+
+  /abstract:
+    get:
+      operationId: getAbstract
+      summary: Retrieve the abstract for the specified research paper.
+      parameters:
+      - in: query
+        name: paper
+        schema:
+          type: string
+        description: Unique ID of the research paper, as returned by the searchPapers /search endpoint.
+      responses:
+        "200":
+          description: OK
+
+  /full:
+    get:
+      operationId: getFullPaper
+      summary: Retrieve the full text of the specified research paper, as returned by the searchPapers /search endpoint.
+      parameters:
+      - in: query
+        name: paper
+        schema:
+          type: string
+        description: Unique ID of the research paper.
+      responses:
+        "200":
+          description: OK
+
