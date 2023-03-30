@@ -113,4 +113,4 @@ jobs:
           docker pull ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main
           docker tag ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
           docker push gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
-          gcloud run deploy --image=gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main chatgpt-plugin-arxiv --allow-unauthenticated --region us-west1 --cpu 1 --memory 128M --max-instances 4
+          gcloud run deploy --image=gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main chatgpt-plugin-arxiv --allow-unauthenticated --region us-west1 --cpu 1 --memory 128Mi --max-instances 4
