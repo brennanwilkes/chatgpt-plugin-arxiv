@@ -54,7 +54,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/static", StaticFiles(directory=".", html=True), name="static")
+app.mount("/.well-known", StaticFiles(directory=".", html=True), name="static")
 
 @app.get("/search")
 async def search_papers(request: Request, text: Optional[str] = None):

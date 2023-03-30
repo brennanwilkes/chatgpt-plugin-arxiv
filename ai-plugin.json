@@ -9,10 +9,10 @@
     },
     "api": {
       "type": "openapi",
-      "url": "chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app/static/openapi.yaml",
+      "url": "chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app/.well-known/openapi.yaml",
       "is_user_authenticated": false
     },
-    "logo_url": "chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app/static/logo.png",
+    "logo_url": "chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app/.well-known/logo.png",
     "contact_email": "brennan@codexwilkes.com",
     "legal_info_url": "https://bw.codexwilkes.com/"
   }
