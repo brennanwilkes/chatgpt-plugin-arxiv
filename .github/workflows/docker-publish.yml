@@ -97,7 +97,7 @@ jobs:
     steps:
       - name: Deploy
         run: |
-        docker pull ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main
-        docker tag ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
-        docker push gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
-        gcloud run deploy --image=gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
+          docker pull ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main \
+          docker tag ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main \
+          docker push gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main \
+          gcloud run deploy --image=gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
