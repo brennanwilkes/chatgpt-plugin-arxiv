@@ -4,7 +4,7 @@ info:
   description: Query for research papers, get abstracts, and retrieve full paper text.
   version: 'v1'
 servers:
-  - url: PLUGIN_HOSTNAME
+  - url: chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app
 paths:
   /search:
     get:

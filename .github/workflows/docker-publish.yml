@@ -90,3 +90,14 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: |
+        docker pull ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main
+        docker tag ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
+        docker push gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main
+        gcloud run deploy --image=gcr.io/${{secrets.gcid}}/brennanwilkes/chatgpt-plugin-arxiv:main

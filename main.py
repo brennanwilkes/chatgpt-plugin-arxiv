@@ -43,7 +43,7 @@ app = FastAPI()
 # Set up CORS middleware
 origins = [
     "https://chat.openai.com",
-    "*"
+    "chatgpt-plugin-arxiv-bbp7dtoq7q-uw.a.run.app"
 ]
 
 app.add_middleware(
