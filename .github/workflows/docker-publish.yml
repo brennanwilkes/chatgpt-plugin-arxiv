@@ -96,6 +96,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: auth
+        id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v0'
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker
+        
       - name: Deploy
         run: |
           docker pull ghcr.io/brennanwilkes/chatgpt-plugin-arxiv:main
